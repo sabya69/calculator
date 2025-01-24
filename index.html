@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <form>
+        <label for="a">Enter the value of a:</label>
+        <input type="number" id="a"><br><br>
+        <label for="b">Enter the value of b:</label>
+        <input type="number" id="b"><br><br>
+        <label for="op">Enter the operation you want to perform:</label>
+        <input type="text" id="op" maxlength="1"><br><br>
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+    <h3>Result: <span id="result"></span></h3>
+    <script>
+        function calculate() {
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+            var op = document.getElementById("op").value;
+            var result;
+            switch(op) {
+                case '+': result = a + b; break;
+                case '-': result = a - b; break;
+                case '*': result = a * b; break;
+                case '/': result = a / b; break;
+                case '%': result = a % b; break;
+                default: result = "Please enter a valid operation";
+            }
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>
